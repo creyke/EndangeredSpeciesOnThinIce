@@ -1,6 +1,8 @@
 # Endangered Species: On Thin Ice
 Final year group project for the University Campus Suffolk (now University of Suffolk) BSc (Hons) Computer Games Programming course.
 
+![Endangered Species: On Thin Ice](https://github.com/creyke/EndangeredSpeciesOnThinIce/raw/master/art/packaging/BoxArtVerySmall.jpg)
+
 # Credits
 * Roger Creyke - Code / Art
 * George Daters - Code
