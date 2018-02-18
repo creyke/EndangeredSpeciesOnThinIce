@@ -9,7 +9,7 @@ Final year group project for the University Campus Suffolk (now University of Su
 * Ryan Avent - Art
 * Dean Leeks - Project Management
 
-![Endangered Species: On Thin Ice](https://github.com/creyke/EndangeredSpeciesOnThinIce/raw/master/art/marketing/ESOTI_DS_Shot_04.png)
+![Endangered Species: On Thin Ice](https://github.com/creyke/EndangeredSpeciesOnThinIce/raw/master/art/marketing/ESOTI_DS_Shot_04_Small.png)
 
 # Playing
 ## Playing on a Nintendo DS
