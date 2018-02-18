@@ -20,3 +20,10 @@ Final year group project for the University Campus Suffolk (now University of Su
 ## Playing on a Nintendo DS emulator
 1. Download an emulator such as DeSmuME.
 2. Download and run one of the .nds binary file from the [builds](https://github.com/creyke/EndangeredSpeciesOnThinIce/tree/master/builds) folder.
+
+# Technology
+* The game was written in C++ on top of PALib and libnds.
+* All physics, camera and gameplay code was written from scratch.
+* The primary render loop was handled by PALib.
+* The editor was written in C#, using Winforms and XNA.
+* Level files were composed in XML and exported to C++ to compile straight into the game.
