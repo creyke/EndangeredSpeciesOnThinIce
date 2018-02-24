@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <!--Project was exported from assembly: C:\Working\Uni\Wiki\editor\EndangeredEd1016\EndangeredEd1016\Editor\EndangeredEd\bin\x86\Debug\EndangeredEd.exe-->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B8512B1A-DD3B-425E-86FB-D8DBF363447D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AssemblyName>EndangeredEd</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <FileAlignment>512</FileAlignment>
+    <RootNamespace>EndangeredEd</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="Microsoft.Build.Framework" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="Microsoft.Build.Engine" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Heatmap.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="LevelBuilder.cs" />
+    <Compile Include="PrimitiveBatch.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="EngineHelper.cs" />
+    <Compile Include="Entities\MA_Entity.cs" />
+    <Compile Include="Entities\MA_EnvironmentEntity.cs" />
+    <Compile Include="Entities\MA_Sign.cs" />
+    <Compile Include="Entities\MA_Checkpoint.cs" />
+    <Compile Include="Entities\MA_CharacterEntity.cs" />
+    <Compile Include="Entities\MA_StartGate.cs" />
+    <Compile Include="Entities\MA_FinishGate.cs" />
+    <Compile Include="Entities\MA_PlayerCharacter.cs" />
+    <Compile Include="Entities\MA_PlayerPenguin.cs" />
+    <Compile Include="Entities\MA_IceBlock.cs" />
+    <Compile Include="Entities\MA_PlayerPolarBear.cs" />
+    <Compile Include="Entities\MA_Pickup.cs" />
+    <Compile Include="Entities\MA_Node.cs" />
+    <Compile Include="Entities\MA_Tile.cs" />
+    <Compile Include="Xna\GraphicsDeviceControl.cs" />
+    <Compile Include="Xna\ContentBuilder.cs" />
+    <Compile Include="Xna\ServiceContainer.cs" />
+    <Compile Include="Xna\ModelViewerControl.cs" />
+    <Compile Include="Xna\GraphicsDeviceService.cs" />
+    <Compile Include="Xna\ErrorLogger.cs" />
+    <Compile Include="Enums\EntityClass.cs" />
+    <Compile Include="Enums\SpriteSize.cs" />
+    <Compile Include="Enums\TileGroup.cs" />
+    <Compile Include="Enums\TGL.cs" />
+    <Compile Include="Properties\Resources.cs" />
+    <Compile Include="Properties\Settings.cs" />
+    <Compile Include="Forms\FormOptions.cs" />
+    <Compile Include="Forms\FormBuildProgress.cs" />
+    <Compile Include="Forms\FormEditor.cs" />
+    <Compile Include="Forms\FormNewEntity.cs" />
+    <Compile Include="Interface\SuperPictureBox.cs" />
+    <Compile Include="AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FormBuildProgress.resx" />
+    <EmbeddedResource Include="Forms\FormEditor.resx" />
+    <EmbeddedResource Include="Forms\FormNewEntity.resx" />
+    <EmbeddedResource Include="Forms\FormOptions.resx" />
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
