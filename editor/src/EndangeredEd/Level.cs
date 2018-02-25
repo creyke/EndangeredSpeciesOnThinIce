@@ -446,8 +446,7 @@ namespace EndangeredEd
       FormEditor.INSTANCE.XnaViewer.Height = (int) this.Height;
       if (this.background == null || this.background.Length <= 0)
         return;
-      // TODO: Add back.
-      //this.assetTexture = EngineHelper.XNATextureFromBitmap(new Bitmap(FormEditor.GRAPHICS_PATH + "\\" + this.background), FormEditor.INSTANCE.XnaViewer.GraphicsDevice);
+      this.assetTexture = EngineHelper.XNATextureFromBitmap(new Bitmap(FormEditor.GRAPHICS_PATH + "\\" + this.background), FormEditor.INSTANCE.XnaViewer.GraphicsDevice);
     }
 
     public void Draw(SpriteBatch spriteBatch, PrimitiveBatch primitiveBatch, bool animate, ListView.ListViewItemCollection entVis)
