@@ -86,6 +86,7 @@ namespace EndangeredEd
       Matrix orthographicOffCenter = Matrix.CreateOrthographicOffCenter((float) num1, (float) width, (float) height, (float) num2, (float) num3, (float) num4);
       basicEffect.Projection = orthographicOffCenter;
       // TODO: Validate.
+      basicEffect.CurrentTechnique.Passes[0].Apply();
       //((Effect) this.basicEffect).Begin();
       //((Effect) this.basicEffect).get_CurrentTechnique().get_Passes().get_Item(0).Begin();
       // TODO: Validate.

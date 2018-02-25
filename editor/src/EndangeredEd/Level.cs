@@ -459,8 +459,6 @@ namespace EndangeredEd
         }
         spriteBatch.End();
       }
-      // TODO: Add back.
-      return;
       primitiveBatch.Begin((PrimitiveType) 2);
       for (int index1 = 0; index1 < this.entities.Count; ++index1)
       {
