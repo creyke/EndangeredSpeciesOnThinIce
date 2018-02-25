@@ -22,10 +22,12 @@ namespace EndangeredEd.Xna
       this.parameters = new PresentationParameters();
       this.parameters.BackBufferWidth = Math.Max(width, 1);
       this.parameters.BackBufferHeight = Math.Max(height, 1);
-      this.parameters.BackBufferFormat = (SurfaceFormat) 1;
+      //this.parameters.BackBufferFormat = (SurfaceFormat) 1; // TODO: Validate.
+      this.parameters.DeviceWindowHandle = windowHandle;
       //this.parameters.set_EnableAutoDepthStencil(true); // TODO: Validate.
       //this.parameters.set_AutoDepthStencilFormat((DepthFormat) 51); // TODO: Validate.
-      this.graphicsDevice = new GraphicsDevice(GraphicsAdapter.DefaultAdapter, GraphicsProfile.HiDef, /*(DeviceType) 1, windowHandle,*/ this.parameters); // TODO: Validate.
+      this.graphicsDevice = new GraphicsDevice(GraphicsAdapter.DefaultAdapter, GraphicsProfile.HiDef, this.parameters);
+      //this.graphicsDevice = new GraphicsDevice(GraphicsAdapter.DefaultAdapter, GraphicsProfile.HiDef, /*(DeviceType) 1, windowHandle,*/ this.parameters); // TODO: Validate.
     }
     
     event EventHandler<EventArgs> IGraphicsDeviceService.DeviceCreated
