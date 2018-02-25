@@ -605,8 +605,6 @@ namespace EndangeredEd.Forms
 
     private void LoadCoreAssets(object sender, EventArgs e)
     {
-      // TODO: Add back.
-      return;
       this.Shown -= new EventHandler(this.LoadCoreAssets);
       MA_Entity.ORIGIN_TEXTURE = EngineHelper.XNATextureFromBitmap(new Bitmap(FormEditor.APPLICATION_PATH + "\\EntityOrigin.png"), this.xnaViewer.GraphicsDevice);
       MA_Node.LINKED_TEXTURE = EngineHelper.XNATextureFromBitmap(new Bitmap(FormEditor.APPLICATION_PATH + "\\NodeLinked.PNG"), this.xnaViewer.GraphicsDevice);
@@ -774,11 +772,7 @@ namespace EndangeredEd.Forms
         this.listView1.Items.Add(allClasses[index]);
         this.listView1.Items[this.listView1.Items.Count - 1].Checked = true;
       }
-      string[] strArray = FormEditor.APPLICATION_PATH.Split(Path.DirectorySeparatorChar);
-      string str = "";
-      for (int index = 0; index < strArray.Length - 5; ++index)
-        str = str + strArray[index] + (object) Path.DirectorySeparatorChar;
-      this.toolStripComboBox1.Text = str + "Game" + (object) Path.DirectorySeparatorChar + "gfx" + (object) Path.DirectorySeparatorChar;
+      this.toolStripComboBox1.Text = APPLICATION_PATH + Path.DirectorySeparatorChar + "Game" + (object) Path.DirectorySeparatorChar + "gfx" + (object) Path.DirectorySeparatorChar;
       if (false)
         this.openingLevel = "C:\\Working\\Projects\\Game\\Editor\\EndangeredEd\\bin\\x86\\Debug\\Levels\\Level 3 - Cold Feet Retreat.esl";
       else if (args.Length > 0 && Path.GetExtension(args[0]) == ".esl" && File.Exists(args[0]))

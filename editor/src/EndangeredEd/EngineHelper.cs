@@ -49,9 +49,8 @@ namespace EndangeredEd
 
     public static Texture2D XNATextureFromBitmap(Bitmap b, GraphicsDevice device)
     {
-      return new Texture2D(device, 10, 10);
       Texture2D texture2D = new Texture2D(device, b.Width, b.Height);
-      System.Drawing.Color[] colorArray = new System.Drawing.Color[b.Width * b.Height];
+      Microsoft.Xna.Framework.Color[] colorArray = new Microsoft.Xna.Framework.Color[b.Width * b.Height];
       int index = 0;
       for (int y = 0; y < b.Height; ++y)
       {
@@ -60,16 +59,30 @@ namespace EndangeredEd
           System.Drawing.Color pixel = b.GetPixel(x, y);
           if ((int) pixel.R == (int) byte.MaxValue && (int) pixel.G == 0 && (int) pixel.B == (int) byte.MaxValue && (int) pixel.A == (int) byte.MaxValue)
           {
-            colorArray[index] = System.Drawing.Color.FromArgb((byte)0, byte.MaxValue, (byte) 0, byte.MaxValue);
+            // ISSUE: explicit reference operation
+            colorArray[index].A = (byte)0;
+            // ISSUE: explicit reference operation
+            colorArray[index].R = byte.MaxValue;
+            // ISSUE: explicit reference operation
+            colorArray[index].G = (byte)0;
+            // ISSUE: explicit reference operation
+            colorArray[index].B = byte.MaxValue;
           }
           else
           {
-            colorArray[index] = System.Drawing.Color.FromArgb(byte.MaxValue, pixel.R, pixel.G, pixel.B);
+            // ISSUE: explicit reference operation
+            colorArray[index].A = byte.MaxValue;
+            // ISSUE: explicit reference operation
+            colorArray[index].R = pixel.R;
+            // ISSUE: explicit reference operation
+            colorArray[index].G = pixel.G;
+            // ISSUE: explicit reference operation
+            colorArray[index].B = pixel.B;
           }
           ++index;
         }
       }
-      texture2D.SetData<System.Drawing.Color>(colorArray);
+      texture2D.SetData<Microsoft.Xna.Framework.Color>(colorArray);
       return texture2D;
     }
 
