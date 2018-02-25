@@ -900,14 +900,24 @@ namespace EndangeredEd.Forms
       formBuildProgress.Location = point;
       bpf.SetProgress(0);
       bpf.SetTask("Creating output file...");
-      if (this.level != null && this.level.BuildPath != null && this.level.BuildPath.Length > 0 && Directory.Exists(Path.GetDirectoryName(this.level.BuildPath)))
+      
+      var outputDir = AppDomain.CurrentDomain.BaseDirectory + "\\output";
+      
+      if (!Directory.Exists(outputDir))
+      {
+        Directory.CreateDirectory(outputDir);
+      }
+
+      var outputPath = outputDir + "//" + new FileInfo(this.level.BuildPath).Name;
+      
+      if (this.level != null && outputPath != null && outputPath.Length > 0 && Directory.Exists(outputDir))
       {
         bpf.SetProgress(15);
         bpf.SetTask("Writing level...");
         try
         {
           flag = true;
-          LevelBuilder.Build(this.level.BuildPath, this.level, FormEditor.version, bpf);
+          LevelBuilder.Build(outputPath, this.level, FormEditor.version, bpf);
           bpf.SetProgress(90);
           bpf.SetTask("Finalising...");
         }
