@@ -201,8 +201,9 @@ namespace EndangeredEd
         this.height = value;
         try
         {
-          this.levelBackground.Height = (int) value;
-          this.levelCanvas.Height = (int) value + 32;
+          // TODO: Add back.
+          //this.levelBackground.Height = (int) value;
+          //this.levelCanvas.Height = (int) value + 32;
         }
         catch (Exception ex)
         {
@@ -224,8 +225,9 @@ namespace EndangeredEd
         this.width = value;
         try
         {
-          this.levelBackground.Width = (int) value;
-          this.levelCanvas.Width = (int) value + 32;
+          // TODO: Add back.
+          //this.levelBackground.Width = (int) value;
+          //this.levelCanvas.Width = (int) value + 32;
         }
         catch (Exception ex)
         {
@@ -444,7 +446,8 @@ namespace EndangeredEd
       FormEditor.INSTANCE.XnaViewer.Height = (int) this.Height;
       if (this.background == null || this.background.Length <= 0)
         return;
-      this.assetTexture = EngineHelper.XNATextureFromBitmap(new Bitmap(FormEditor.GRAPHICS_PATH + "\\" + this.background), FormEditor.INSTANCE.XnaViewer.GraphicsDevice);
+      // TODO: Add back.
+      //this.assetTexture = EngineHelper.XNATextureFromBitmap(new Bitmap(FormEditor.GRAPHICS_PATH + "\\" + this.background), FormEditor.INSTANCE.XnaViewer.GraphicsDevice);
     }
 
     public void Draw(SpriteBatch spriteBatch, PrimitiveBatch primitiveBatch, bool animate, ListView.ListViewItemCollection entVis)
@@ -459,6 +462,8 @@ namespace EndangeredEd
         }
         spriteBatch.End();
       }
+      // TODO: Add back.
+      return;
       primitiveBatch.Begin((PrimitiveType) 2);
       for (int index1 = 0; index1 < this.entities.Count; ++index1)
       {

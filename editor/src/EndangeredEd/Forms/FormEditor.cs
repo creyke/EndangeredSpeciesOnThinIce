@@ -605,6 +605,8 @@ namespace EndangeredEd.Forms
 
     private void LoadCoreAssets(object sender, EventArgs e)
     {
+      // TODO: Add back.
+      return;
       this.Shown -= new EventHandler(this.LoadCoreAssets);
       MA_Entity.ORIGIN_TEXTURE = EngineHelper.XNATextureFromBitmap(new Bitmap(FormEditor.APPLICATION_PATH + "\\EntityOrigin.png"), this.xnaViewer.GraphicsDevice);
       MA_Node.LINKED_TEXTURE = EngineHelper.XNATextureFromBitmap(new Bitmap(FormEditor.APPLICATION_PATH + "\\NodeLinked.PNG"), this.xnaViewer.GraphicsDevice);

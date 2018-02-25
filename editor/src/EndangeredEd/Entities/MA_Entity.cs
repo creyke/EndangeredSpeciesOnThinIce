@@ -178,7 +178,8 @@ namespace EndangeredEd.Entities
     {
       if (this.spriteAsset == null || this.spriteAsset.Length <= 0)
         return;
-      this.assetTexture = EngineHelper.XNATextureFromBitmap(new Bitmap(FormEditor.GRAPHICS_PATH + "\\" + this.spriteAsset), FormEditor.INSTANCE.XnaViewer.GraphicsDevice);
+      // TODO: Add back.
+      //this.assetTexture = EngineHelper.XNATextureFromBitmap(new Bitmap(FormEditor.GRAPHICS_PATH + "\\" + this.spriteAsset), FormEditor.INSTANCE.XnaViewer.GraphicsDevice);
     }
 
     public void UpdateWorldRectangle()

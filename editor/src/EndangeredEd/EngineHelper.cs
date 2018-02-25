@@ -49,6 +49,7 @@ namespace EndangeredEd
 
     public static Texture2D XNATextureFromBitmap(Bitmap b, GraphicsDevice device)
     {
+      return new Texture2D(device, 10, 10);
       Texture2D texture2D = new Texture2D(device, b.Width, b.Height);
       System.Drawing.Color[] colorArray = new System.Drawing.Color[b.Width * b.Height];
       int index = 0;
