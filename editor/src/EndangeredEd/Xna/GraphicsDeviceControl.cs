@@ -112,7 +112,6 @@ namespace EndangeredEd.Xna
         clientSize = this.ClientSize;
         int height = clientSize.Height;
         //((Microsoft.Xna.Framework.Rectangle) local).\u002Ector(num1, num2, width, height); // TODO: Validate.[
-        // TODO: Add back.
         this.GraphicsDevice.Present(); // TODO: Validate.
         //this.GraphicsDevice.Present(new Microsoft.Xna.Framework.Rectangle?(rectangle), new Microsoft.Xna.Framework.Rectangle?(), this.Handle);
       }

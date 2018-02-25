@@ -199,14 +199,13 @@ namespace EndangeredEd
       set
       {
         this.height = value;
-        try
+        if (this.levelBackground != null)
         {
-          // TODO: Add back.
-          //this.levelBackground.Height = (int) value;
-          //this.levelCanvas.Height = (int) value + 32;
+          this.levelBackground.Height = (int) value;
         }
-        catch (Exception ex)
+        if (this.levelCanvas != null)
         {
+          this.levelCanvas.Height = (int) value + 32;
         }
         this.UpdateBackgroundImage();
       }
@@ -223,14 +222,13 @@ namespace EndangeredEd
       set
       {
         this.width = value;
-        try
+        if (this.levelBackground != null)
         {
-          // TODO: Add back.
-          //this.levelBackground.Width = (int) value;
-          //this.levelCanvas.Width = (int) value + 32;
+          this.levelBackground.Width = (int) value;
         }
-        catch (Exception ex)
+        if (this.levelCanvas != null)
         {
+          this.levelCanvas.Width = (int) value + 32;
         }
         this.UpdateBackgroundImage();
       }
