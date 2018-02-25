@@ -70,39 +70,39 @@ namespace EndangeredEd.Xna
 
     private void MeasureModel()
     {
-      this.boneTransforms = new Matrix[((ReadOnlyCollection<ModelBone>) this.model.get_Bones()).Count];
+      this.boneTransforms = new Matrix[((ReadOnlyCollection<ModelBone>) this.model.Bones).Count];
       this.model.CopyAbsoluteBoneTransformsTo(this.boneTransforms);
-      this.modelCenter = Vector3.get_Zero();
-      using (ModelMeshCollection.Enumerator enumerator = this.model.get_Meshes().GetEnumerator())
+      this.modelCenter = Vector3.Zero;
+      using (ModelMeshCollection.Enumerator enumerator = this.model.Meshes.GetEnumerator())
       {
         // ISSUE: explicit reference operation
         while (((ModelMeshCollection.Enumerator) @enumerator).MoveNext())
         {
           // ISSUE: explicit reference operation
-          ModelMesh current = ((ModelMeshCollection.Enumerator) @enumerator).get_Current();
-          Vector3 vector3 = Vector3.Transform((Vector3) current.get_BoundingSphere().Center, this.boneTransforms[current.get_ParentBone().get_Index()]);
+          ModelMesh current = ((ModelMeshCollection.Enumerator) @enumerator).Current;
+          Vector3 vector3 = Vector3.Transform((Vector3) current.BoundingSphere.Center, this.boneTransforms[current.ParentBone.Index]);
           ModelViewerControl modelViewerControl = this;
-          modelViewerControl.modelCenter = Vector3.op_Addition(modelViewerControl.modelCenter, vector3);
+          modelViewerControl.modelCenter = Vector3.Add(modelViewerControl.modelCenter, vector3);
         }
       }
       ModelViewerControl modelViewerControl1 = this;
-      modelViewerControl1.modelCenter = Vector3.op_Division(modelViewerControl1.modelCenter, (float) ((ReadOnlyCollection<ModelMesh>) this.model.get_Meshes()).Count);
+      modelViewerControl1.modelCenter = Vector3.Divide(modelViewerControl1.modelCenter, (float) ((ReadOnlyCollection<ModelMesh>) this.model.Meshes).Count);
       this.modelRadius = 0.0f;
-      using (ModelMeshCollection.Enumerator enumerator = this.model.get_Meshes().GetEnumerator())
+      using (ModelMeshCollection.Enumerator enumerator = this.model.Meshes.GetEnumerator())
       {
         // ISSUE: explicit reference operation
         while (((ModelMeshCollection.Enumerator) @enumerator).MoveNext())
         {
           // ISSUE: explicit reference operation
-          ModelMesh current = ((ModelMeshCollection.Enumerator) @enumerator).get_Current();
-          BoundingSphere boundingSphere = current.get_BoundingSphere();
-          Matrix boneTransform = this.boneTransforms[current.get_ParentBone().get_Index()];
+          ModelMesh current = ((ModelMeshCollection.Enumerator) @enumerator).Current;
+          BoundingSphere boundingSphere = current.BoundingSphere;
+          Matrix boneTransform = this.boneTransforms[current.ParentBone.Index];
           Vector3 vector3_1 = Vector3.Transform((Vector3) boundingSphere.Center, boneTransform);
           // ISSUE: explicit reference operation
-          Vector3 vector3_2 = ((Matrix) @boneTransform).get_Forward();
+          Vector3 vector3_2 = ((Matrix) @boneTransform).Forward;
           // ISSUE: explicit reference operation
           float num = ((Vector3) @vector3_2).Length();
-          vector3_2 = Vector3.op_Subtraction(vector3_1, this.modelCenter);
+          vector3_2 = Vector3.Subtract(vector3_1, this.modelCenter);
           // ISSUE: explicit reference operation
           this.modelRadius = Math.Max(this.modelRadius, ((Vector3) @vector3_2).Length() + (float) boundingSphere.Radius * num);
         }

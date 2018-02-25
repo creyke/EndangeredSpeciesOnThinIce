@@ -35,7 +35,7 @@ namespace EndangeredEd.Entities
       maSign.asset = this.asset;
       maSign.spriteAsset = this.spriteAsset;
       maSign.spriteSize = this.spriteSize;
-      maSign.position = Vector2.get_Zero();
+      maSign.position = Vector2.Zero;
       maSign.offset = this.offset;
       maSign.signText = this.signText;
       return (MA_Entity) maSign;

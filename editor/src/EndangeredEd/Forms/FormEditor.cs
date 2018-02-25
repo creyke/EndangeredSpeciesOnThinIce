@@ -22,10 +22,10 @@ namespace EndangeredEd.Forms
   {
     public static string version = "1.0.1.6";
     private IContainer components = (IContainer) null;
-    private Vector2 draggingOffset = Vector2.get_Zero();
-    private Vector2 rightClickPos = Vector2.get_Zero();
-    private Color hmColor = new Color(byte.MaxValue, byte.MaxValue, (byte) 0, (byte) 100);
-    private Color hmDeathColor = new Color(byte.MaxValue, (byte) 0, (byte) 0, byte.MaxValue);
+    private Vector2 draggingOffset = Vector2.Zero;
+    private Vector2 rightClickPos = Vector2.Zero;
+    private Microsoft.Xna.Framework.Color hmColor = new Microsoft.Xna.Framework.Color(byte.MaxValue, byte.MaxValue, (byte) 0, (byte) 100);
+    private Microsoft.Xna.Framework.Color hmDeathColor = new Microsoft.Xna.Framework.Color(byte.MaxValue, (byte) 0, (byte) 0, byte.MaxValue);
     private bool linkingNode = false;
     private bool unlinkingNode = false;
     private MenuStrip menuStrip;
@@ -183,7 +183,7 @@ namespace EndangeredEd.Forms
         (ToolStripItem) this.toolsToolStripMenuItem,
         (ToolStripItem) this.helpToolStripMenuItem
       });
-      this.menuStrip.Location = new Point(0, 0);
+      this.menuStrip.Location = new System.Drawing.Point(0, 0);
       this.menuStrip.Name = "menuStrip";
       this.menuStrip.Size = new Size(1039, 24);
       this.menuStrip.TabIndex = 0;
@@ -309,14 +309,14 @@ namespace EndangeredEd.Forms
         (ToolStripItem) this.toolStripComboBox1,
         (ToolStripItem) this.toolStripButtonBuildLevel
       });
-      this.toolStrip1.Location = new Point(0, 24);
+      this.toolStrip1.Location = new System.Drawing.Point(0, 24);
       this.toolStrip1.Name = "toolStrip1";
       this.toolStrip1.Size = new Size(1039, 25);
       this.toolStrip1.TabIndex = 1;
       this.toolStrip1.Text = "toolStrip1";
       this.toolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Image;
       this.toolStripButton1.Image = (Image) componentResourceManager.GetObject("toolStripButton1.Image");
-      this.toolStripButton1.ImageTransparentColor = Color.Magenta;
+      this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.toolStripButton1.Name = "toolStripButton1";
       this.toolStripButton1.Size = new Size(23, 22);
       this.toolStripButton1.Text = "New Level";
@@ -327,14 +327,14 @@ namespace EndangeredEd.Forms
       this.toolStripSeparator4.Visible = false;
       this.toolStripButtonCreateEntity.DisplayStyle = ToolStripItemDisplayStyle.Image;
       this.toolStripButtonCreateEntity.Image = (Image) componentResourceManager.GetObject("toolStripButtonCreateEntity.Image");
-      this.toolStripButtonCreateEntity.ImageTransparentColor = Color.Magenta;
+      this.toolStripButtonCreateEntity.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.toolStripButtonCreateEntity.Name = "toolStripButtonCreateEntity";
       this.toolStripButtonCreateEntity.Size = new Size(23, 22);
       this.toolStripButtonCreateEntity.Text = "Create Entity";
       this.toolStripButtonCreateEntity.Click += new EventHandler(this.toolStripButtonCreateEntity_Click);
       this.toolStripButtonConvertEntity.DisplayStyle = ToolStripItemDisplayStyle.Image;
       this.toolStripButtonConvertEntity.Image = (Image) componentResourceManager.GetObject("toolStripButtonConvertEntity.Image");
-      this.toolStripButtonConvertEntity.ImageTransparentColor = Color.Magenta;
+      this.toolStripButtonConvertEntity.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.toolStripButtonConvertEntity.Name = "toolStripButtonConvertEntity";
       this.toolStripButtonConvertEntity.Size = new Size(23, 22);
       this.toolStripButtonConvertEntity.Text = "Convert Entity";
@@ -344,7 +344,7 @@ namespace EndangeredEd.Forms
       this.toolStripButtonAnimate.CheckOnClick = true;
       this.toolStripButtonAnimate.DisplayStyle = ToolStripItemDisplayStyle.Image;
       this.toolStripButtonAnimate.Image = (Image) componentResourceManager.GetObject("toolStripButtonAnimate.Image");
-      this.toolStripButtonAnimate.ImageTransparentColor = Color.Magenta;
+      this.toolStripButtonAnimate.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.toolStripButtonAnimate.Name = "toolStripButtonAnimate";
       this.toolStripButtonAnimate.Size = new Size(23, 22);
       this.toolStripButtonAnimate.Text = "Animate All Entities";
@@ -354,7 +354,7 @@ namespace EndangeredEd.Forms
       this.toolStripComboBox1.Text = "C:\\Working\\Projects\\Game\\Game\\gfx";
       this.toolStripButtonBuildLevel.DisplayStyle = ToolStripItemDisplayStyle.Image;
       this.toolStripButtonBuildLevel.Image = (Image) componentResourceManager.GetObject("toolStripButtonBuildLevel.Image");
-      this.toolStripButtonBuildLevel.ImageTransparentColor = Color.Magenta;
+      this.toolStripButtonBuildLevel.ImageTransparentColor = System.Drawing.Color.Magenta;
       this.toolStripButtonBuildLevel.Name = "toolStripButtonBuildLevel";
       this.toolStripButtonBuildLevel.Size = new Size(23, 22);
       this.toolStripButtonBuildLevel.Text = "Build Level";
@@ -363,7 +363,7 @@ namespace EndangeredEd.Forms
       {
         (ToolStripItem) this.toolStripSelectedLabel
       });
-      this.statusStrip1.Location = new Point(0, 601);
+      this.statusStrip1.Location = new System.Drawing.Point(0, 601);
       this.statusStrip1.Name = "statusStrip1";
       this.statusStrip1.Size = new Size(1039, 22);
       this.statusStrip1.TabIndex = 2;
@@ -372,20 +372,20 @@ namespace EndangeredEd.Forms
       this.toolStripSelectedLabel.Size = new Size(0, 17);
       this.panelProperties.Controls.Add((Control) this.tabControl1);
       this.panelProperties.Dock = DockStyle.Right;
-      this.panelProperties.Location = new Point(739, 49);
+      this.panelProperties.Location = new System.Drawing.Point(739, 49);
       this.panelProperties.Name = "panelProperties";
       this.panelProperties.Size = new Size(300, 552);
       this.panelProperties.TabIndex = 3;
       this.tabControl1.Controls.Add((Control) this.tabPage1);
       this.tabControl1.Controls.Add((Control) this.tabPage2);
       this.tabControl1.Dock = DockStyle.Fill;
-      this.tabControl1.Location = new Point(0, 0);
+      this.tabControl1.Location = new System.Drawing.Point(0, 0);
       this.tabControl1.Name = "tabControl1";
       this.tabControl1.SelectedIndex = 0;
       this.tabControl1.Size = new Size(300, 552);
       this.tabControl1.TabIndex = 4;
       this.tabPage1.Controls.Add((Control) this.propertyGrid1);
-      this.tabPage1.Location = new Point(4, 22);
+      this.tabPage1.Location = new System.Drawing.Point(4, 22);
       this.tabPage1.Name = "tabPage1";
       this.tabPage1.Padding = new Padding(3);
       this.tabPage1.Size = new Size(292, 526);
@@ -393,12 +393,12 @@ namespace EndangeredEd.Forms
       this.tabPage1.Text = "Entity Properties";
       this.tabPage1.UseVisualStyleBackColor = true;
       this.propertyGrid1.Dock = DockStyle.Fill;
-      this.propertyGrid1.Location = new Point(3, 3);
+      this.propertyGrid1.Location = new System.Drawing.Point(3, 3);
       this.propertyGrid1.Name = "propertyGrid1";
       this.propertyGrid1.Size = new Size(286, 520);
       this.propertyGrid1.TabIndex = 1;
       this.tabPage2.Controls.Add((Control) this.listView1);
-      this.tabPage2.Location = new Point(4, 22);
+      this.tabPage2.Location = new System.Drawing.Point(4, 22);
       this.tabPage2.Name = "tabPage2";
       this.tabPage2.Padding = new Padding(3);
       this.tabPage2.Size = new Size(292, 526);
@@ -406,14 +406,14 @@ namespace EndangeredEd.Forms
       this.tabPage2.Text = "Entity Visibility";
       this.tabPage2.UseVisualStyleBackColor = true;
       this.listView1.Dock = DockStyle.Fill;
-      this.listView1.Location = new Point(3, 3);
+      this.listView1.Location = new System.Drawing.Point(3, 3);
       this.listView1.Name = "listView1";
       this.listView1.Size = new Size(286, 520);
       this.listView1.TabIndex = 4;
       this.listView1.UseCompatibleStateImageBehavior = false;
       this.openFileDialog1.FileName = "openFileDialog1";
       this.panelEntites.Dock = DockStyle.Left;
-      this.panelEntites.Location = new Point(0, 49);
+      this.panelEntites.Location = new System.Drawing.Point(0, 49);
       this.panelEntites.Name = "panelEntites";
       this.panelEntites.Size = new Size(200, 552);
       this.panelEntites.TabIndex = 5;
@@ -422,12 +422,12 @@ namespace EndangeredEd.Forms
       this.panelLevel.Controls.Add((Control) this.xnaViewer);
       this.panelLevel.Controls.Add((Control) this.levelCanvas);
       this.panelLevel.Dock = DockStyle.Fill;
-      this.panelLevel.Location = new Point(200, 49);
+      this.panelLevel.Location = new System.Drawing.Point(200, 49);
       this.panelLevel.Name = "panelLevel";
       this.panelLevel.Size = new Size(539, 552);
       this.panelLevel.TabIndex = 6;
       this.panelLevel.Scroll += new ScrollEventHandler(this.panelLevel_Scroll);
-      this.xnaViewer.Location = new Point(0, 0);
+      this.xnaViewer.Location = new System.Drawing.Point(0, 0);
       this.xnaViewer.Model = (Model) null;
       this.xnaViewer.Name = "xnaViewer";
       this.xnaViewer.Size = new Size(1024, 1024);
@@ -435,12 +435,12 @@ namespace EndangeredEd.Forms
       this.xnaViewer.Text = "xnaViewer";
       this.levelCanvas.BackColor = SystemColors.Control;
       this.levelCanvas.Controls.Add((Control) this.levelBackground);
-      this.levelCanvas.Location = new Point(0, 0);
+      this.levelCanvas.Location = new System.Drawing.Point(0, 0);
       this.levelCanvas.Name = "levelCanvas";
       this.levelCanvas.Size = new Size(1024, 1024);
       this.levelCanvas.TabIndex = 1;
       this.levelBackground.BackColor = SystemColors.AppWorkspace;
-      this.levelBackground.Location = new Point(0, 0);
+      this.levelBackground.Location = new System.Drawing.Point(0, 0);
       this.levelBackground.Name = "levelBackground";
       this.levelBackground.Size = new Size(100, 50);
       this.levelBackground.TabIndex = 2;
@@ -615,7 +615,7 @@ namespace EndangeredEd.Forms
       MA_Tile.SetupTileIndexes();
       MA_Tile.LoadTileGroups(FormEditor.GRAPHICS_PATH + "\\Tiles", this.xnaViewer.GraphicsDevice);
       this.primitiveBatch = new PrimitiveBatch(this.xnaViewer.GraphicsDevice);
-      this.xnaViewer.GraphicsDevice.Clear(Color.get_Black());
+      this.xnaViewer.GraphicsDevice.Clear(Microsoft.Xna.Framework.Color.Black);
       if (this.openingLevel == null || this.openingLevel.Length <= 0)
         return;
       this.LoadLevel(this.openingLevel);
@@ -649,11 +649,11 @@ namespace EndangeredEd.Forms
           this.SetSelected((object) this.level.Entities[index]);
           if (e.Button == MouseButtons.Left)
           {
-            this.draggingOffset = Vector2.op_Subtraction(this.level.Entities[index].Position, new Vector2((float) e.X, (float) e.Y));
+            this.draggingOffset = Vector2.Subtract(this.level.Entities[index].Position, new Vector2((float) e.X, (float) e.Y));
             this.dragging = true;
           }
           else if (e.Button == MouseButtons.Right)
-            this.showEntityContext(entity, new Point(e.X, e.Y));
+            this.showEntityContext(entity, new System.Drawing.Point(e.X, e.Y));
           if (this.level.Entities[index].GetType() == typeof (MA_Node))
           {
             node = this.level.Entities[index] as MA_Node;
@@ -684,19 +684,19 @@ namespace EndangeredEd.Forms
       if (!flag1)
       {
         if (e.Button == MouseButtons.Right)
-          this.showNodeContext(node, new Point(e.X, e.Y));
+          this.showNodeContext(node, new System.Drawing.Point(e.X, e.Y));
         if (!flag2)
           this.SetSelected((object) this.level);
       }
     }
 
-    private void showEntityContext(MA_Entity entity, Point location)
+    private void showEntityContext(MA_Entity entity, System.Drawing.Point location)
     {
       this.rightClickPos = new Vector2((float) location.X, (float) location.Y);
       this.contextMenuStrip1.Show((Control) this.xnaViewer, location, ToolStripDropDownDirection.BelowRight);
     }
 
-    private void showNodeContext(MA_Node node, Point location)
+    private void showNodeContext(MA_Node node, System.Drawing.Point location)
     {
       this.currentNode = node;
       this.rightClickPos = new Vector2((float) location.X, (float) location.Y);
@@ -729,14 +729,14 @@ namespace EndangeredEd.Forms
 
     private void renderTimer_Tick(object sender, EventArgs e)
     {
-      this.xnaViewer.GraphicsDevice.Clear(Color.get_Black());
+      this.xnaViewer.GraphicsDevice.Clear(Microsoft.Xna.Framework.Color.Black);
       if (this.level != null && this.xnaViewer.GraphicsDevice != null)
         this.level.Draw(this.xnaViewer.SpriteBatch, this.primitiveBatch, this.toolStripButtonAnimate.Checked, this.listView1.Items);
       if (this.heatmap == null || this.xnaViewer.GraphicsDevice == null)
         return;
       this.xnaViewer.SpriteBatch.Begin();
       for (int index = 0; index < this.heatmap.PositionPoints.Length; ++index)
-        this.xnaViewer.SpriteBatch.Draw(this.heatmapSpot, Vector2.op_Subtraction(this.heatmap.PositionPoints[index], new Vector2(7f, 7f)), this.heatmap.PointIds[index] == 1 ? this.hmDeathColor : this.hmColor);
+        this.xnaViewer.SpriteBatch.Draw(this.heatmapSpot, Vector2.Subtract(this.heatmap.PositionPoints[index], new Vector2(7f, 7f)), this.heatmap.PointIds[index] == 1 ? this.hmDeathColor : this.hmColor);
       this.xnaViewer.SpriteBatch.End();
     }
 
@@ -789,7 +789,7 @@ namespace EndangeredEd.Forms
     private void CreateNewLevel()
     {
       if (this.xnaViewer.GraphicsDevice != null)
-        this.xnaViewer.GraphicsDevice.Clear(Color.get_Black());
+        this.xnaViewer.GraphicsDevice.Clear(Microsoft.Xna.Framework.Color.Black);
       this.level = new Level(this.levelBackground, this.levelCanvas);
       this.propertyGrid1.SelectedObject = (object) this.level;
       this.SetTitle();
@@ -890,11 +890,11 @@ namespace EndangeredEd.Forms
       bool flag = false;
       FormBuildProgress bpf = new FormBuildProgress();
       FormBuildProgress formBuildProgress = bpf;
-      Point location = this.Location;
+      System.Drawing.Point location = this.Location;
       int x = location.X + this.Width / 2 - bpf.Width / 2;
       location = this.Location;
       int y = location.X + this.Height / 2 - bpf.Height / 2;
-      Point point = new Point(x, y);
+      System.Drawing.Point point = new System.Drawing.Point(x, y);
       formBuildProgress.Location = point;
       bpf.SetProgress(0);
       bpf.SetTask("Creating output file...");

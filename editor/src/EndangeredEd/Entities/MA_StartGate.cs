@@ -18,7 +18,7 @@ namespace EndangeredEd.Entities
       maStartGate.asset = this.asset;
       maStartGate.spriteAsset = this.spriteAsset;
       maStartGate.spriteSize = this.spriteSize;
-      maStartGate.position = Vector2.get_Zero();
+      maStartGate.position = Vector2.Zero;
       maStartGate.offset = this.offset;
       return (MA_Entity) maStartGate;
     }

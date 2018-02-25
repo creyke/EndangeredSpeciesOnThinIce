@@ -32,10 +32,10 @@ namespace EndangeredEd.Entities
   public class MA_Entity
   {
     protected uint animationFrame = 0;
-    protected Vector2 position = Vector2.get_Zero();
-    protected Vector2 offset = Vector2.get_Zero();
-    protected Rectangle destRectangle = Rectangle.get_Empty();
-    protected Rectangle srcRectangle = Rectangle.get_Empty();
+    protected Vector2 position = Vector2.Zero;
+    protected Vector2 offset = Vector2.Zero;
+    protected Microsoft.Xna.Framework.Rectangle destRectangle = Microsoft.Xna.Framework.Rectangle.Empty;
+    protected Microsoft.Xna.Framework.Rectangle srcRectangle = Microsoft.Xna.Framework.Rectangle.Empty;
     public static Texture2D ORIGIN_TEXTURE;
     protected string asset;
     protected Texture2D assetTexture;
@@ -158,7 +158,7 @@ namespace EndangeredEd.Entities
         asset = this.asset,
         spriteAsset = this.spriteAsset,
         spriteSize = this.spriteSize,
-        position = Vector2.get_Zero(),
+        position = Vector2.Zero,
         offset = this.offset
       };
     }
@@ -166,7 +166,7 @@ namespace EndangeredEd.Entities
     public bool SelectCheck(int pX, int pY)
     {
       // ISSUE: explicit reference operation
-      return ((Rectangle) @this.destRectangle).Contains(pX, pY);
+      return ((Microsoft.Xna.Framework.Rectangle) this.destRectangle).Contains(pX, pY);
     }
 
     public void LoadContent(ContentManager manager)
@@ -183,14 +183,14 @@ namespace EndangeredEd.Entities
 
     public void UpdateWorldRectangle()
     {
-      Vector2 vector2 = Vector2.op_Subtraction(this.position, this.offset);
+      Vector2 vector2 = Vector2.Subtract(this.position, this.offset);
       Vector2 spriteSize = EngineHelper.GetSpriteSize(this.spriteSize);
-      this.destRectangle.X = (__Null) (int) vector2.X;
-      this.destRectangle.Y = (__Null) (int) vector2.Y;
-      this.destRectangle.Width = (__Null) (int) spriteSize.X;
-      this.destRectangle.Height = (__Null) (int) spriteSize.Y;
-      this.srcRectangle.Width = (__Null) (int) spriteSize.X;
-      this.srcRectangle.Height = (__Null) (int) spriteSize.Y;
+      this.destRectangle.X = (int) vector2.X;
+      this.destRectangle.Y = (int) vector2.Y;
+      this.destRectangle.Width = (int) spriteSize.X;
+      this.destRectangle.Height = (int) spriteSize.Y;
+      this.srcRectangle.Width = (int) spriteSize.X;
+      this.srcRectangle.Height = (int) spriteSize.Y;
     }
 
     public virtual void Draw(SpriteBatch spriteBatch, bool animate)
@@ -199,23 +199,23 @@ namespace EndangeredEd.Entities
       {
         if (animate)
         {
-          uint num = (uint) (this.assetTexture.get_Height() / this.destRectangle.Height);
+          uint num = (uint) (this.assetTexture.Height / this.destRectangle.Height);
           ++this.animationFrame;
           if (this.animationFrame >= num)
             this.animationFrame = 0U;
-          this.srcRectangle.Y = (__Null) (int) ((double) this.animationFrame * EngineHelper.GetSpriteSize(this.spriteSize).Y);
+          this.srcRectangle.Y = (int) ((double) this.animationFrame * EngineHelper.GetSpriteSize(this.spriteSize).Y);
         }
         else
         {
           this.animationFrame = 0U;
-          this.srcRectangle.Y = (__Null) 0;
+          this.srcRectangle.Y = 0;
         }
         if (this.selected)
-          spriteBatch.Draw(this.assetTexture, this.destRectangle, new Rectangle?(this.srcRectangle), new Color(byte.MaxValue, (byte) 0, (byte) 0, (byte) 128));
+          spriteBatch.Draw(this.assetTexture, this.destRectangle, new Microsoft.Xna.Framework.Rectangle?(this.srcRectangle), new Microsoft.Xna.Framework.Color(byte.MaxValue, (byte) 0, (byte) 0, (byte) 128));
         else
-          spriteBatch.Draw(this.assetTexture, this.destRectangle, new Rectangle?(this.srcRectangle), Color.get_White());
+          spriteBatch.Draw(this.assetTexture, this.destRectangle, new Microsoft.Xna.Framework.Rectangle?(this.srcRectangle), Microsoft.Xna.Framework.Color.White);
       }
-      spriteBatch.Draw(MA_Entity.ORIGIN_TEXTURE, Vector2.op_Subtraction(this.position, new Vector2(7f, 7f)), Color.get_White());
+      spriteBatch.Draw(MA_Entity.ORIGIN_TEXTURE, Vector2.Subtract(this.position, new Vector2(7f, 7f)), Microsoft.Xna.Framework.Color.White);
     }
   }
 }

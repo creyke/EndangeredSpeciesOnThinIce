@@ -18,7 +18,7 @@ namespace EndangeredEd.Entities
       maPlayerPolarBear.asset = this.asset;
       maPlayerPolarBear.spriteAsset = this.spriteAsset;
       maPlayerPolarBear.spriteSize = this.spriteSize;
-      maPlayerPolarBear.position = Vector2.get_Zero();
+      maPlayerPolarBear.position = Vector2.Zero;
       maPlayerPolarBear.offset = this.offset;
       return (MA_Entity) maPlayerPolarBear;
     }

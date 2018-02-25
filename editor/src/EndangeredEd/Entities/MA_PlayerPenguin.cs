@@ -18,7 +18,7 @@ namespace EndangeredEd.Entities
       maPlayerPenguin.asset = this.asset;
       maPlayerPenguin.spriteAsset = this.spriteAsset;
       maPlayerPenguin.spriteSize = this.spriteSize;
-      maPlayerPenguin.position = Vector2.get_Zero();
+      maPlayerPenguin.position = Vector2.Zero;
       maPlayerPenguin.offset = this.offset;
       return (MA_Entity) maPlayerPenguin;
     }

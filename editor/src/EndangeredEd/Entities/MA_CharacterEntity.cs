@@ -18,7 +18,7 @@ namespace EndangeredEd.Entities
       maCharacterEntity.asset = this.asset;
       maCharacterEntity.spriteAsset = this.spriteAsset;
       maCharacterEntity.spriteSize = this.spriteSize;
-      maCharacterEntity.position = Vector2.get_Zero();
+      maCharacterEntity.position = Vector2.Zero;
       maCharacterEntity.offset = this.offset;
       return (MA_Entity) maCharacterEntity;
     }

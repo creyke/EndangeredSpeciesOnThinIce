@@ -18,7 +18,7 @@ namespace EndangeredEd.Entities
       maPickup.asset = this.asset;
       maPickup.spriteAsset = this.spriteAsset;
       maPickup.spriteSize = this.spriteSize;
-      maPickup.position = Vector2.get_Zero();
+      maPickup.position = Vector2.Zero;
       maPickup.offset = this.offset;
       return (MA_Entity) maPickup;
     }

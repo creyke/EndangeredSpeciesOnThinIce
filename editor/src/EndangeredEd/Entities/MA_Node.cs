@@ -94,9 +94,9 @@ namespace EndangeredEd.Entities
     public override void Draw(SpriteBatch spriteBatch, bool animate)
     {
       this.animationFrame = 0U;
-      this.srcRectangle.Y = (__Null) 0;
+      this.srcRectangle.Y = 0;
       Texture2D texture2D = this.neighbours.Count <= 0 ? (this.sharkNode ? MA_Node.SHARK_UNLINKED_TEXTURE : MA_Node.UNLINKED_TEXTURE) : (this.sharkNode ? MA_Node.SHARK_LINKED_TEXTURE : MA_Node.LINKED_TEXTURE);
-      spriteBatch.Draw(texture2D, this.destRectangle, new Rectangle?(this.srcRectangle), this.selected ? new Color(byte.MaxValue, (byte) 0, (byte) 0, (byte) 128) : Color.get_White());
+      spriteBatch.Draw(texture2D, this.destRectangle, new Rectangle?(this.srcRectangle), this.selected ? new Color(byte.MaxValue, (byte) 0, (byte) 0, (byte) 128) : Color.White);
       int num = 0;
       while (num < this.neighbours.Count)
         ++num;

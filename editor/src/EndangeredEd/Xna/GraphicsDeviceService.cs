@@ -20,14 +20,58 @@ namespace EndangeredEd.Xna
     private GraphicsDeviceService(IntPtr windowHandle, int width, int height)
     {
       this.parameters = new PresentationParameters();
-      this.parameters.set_BackBufferWidth(Math.Max(width, 1));
-      this.parameters.set_BackBufferHeight(Math.Max(height, 1));
-      this.parameters.set_BackBufferFormat((SurfaceFormat) 1);
-      this.parameters.set_EnableAutoDepthStencil(true);
-      this.parameters.set_AutoDepthStencilFormat((DepthFormat) 51);
-      this.graphicsDevice = new GraphicsDevice(GraphicsAdapter.get_DefaultAdapter(), (DeviceType) 1, windowHandle, this.parameters);
+      this.parameters.BackBufferWidth = Math.Max(width, 1);
+      this.parameters.BackBufferHeight = Math.Max(height, 1);
+      this.parameters.BackBufferFormat = (SurfaceFormat) 1;
+      //this.parameters.set_EnableAutoDepthStencil(true); // TODO: Validate.
+      //this.parameters.set_AutoDepthStencilFormat((DepthFormat) 51); // TODO: Validate.
+      this.graphicsDevice = new GraphicsDevice(GraphicsAdapter.DefaultAdapter, GraphicsProfile.HiDef, /*(DeviceType) 1, windowHandle,*/ this.parameters); // TODO: Validate.
     }
+    
+    event EventHandler<EventArgs> IGraphicsDeviceService.DeviceCreated
+    {
+        add
+        {
+        }
 
+        remove
+        {
+        }
+    }
+    
+    event EventHandler<EventArgs> IGraphicsDeviceService.DeviceDisposing
+    {
+        add
+        {
+        }
+
+        remove
+        {
+        }
+    }
+    
+    event EventHandler<EventArgs> IGraphicsDeviceService.DeviceReset
+    {
+        add
+        {
+        }
+
+        remove
+        {
+        }
+    }
+    
+    event EventHandler<EventArgs> IGraphicsDeviceService.DeviceResetting
+    {
+        add
+        {
+        }
+
+        remove
+        {
+        }
+    }
+    
     public static GraphicsDeviceService AddRef(IntPtr windowHandle, int width, int height)
     {
       if (Interlocked.Increment(ref GraphicsDeviceService.referenceCount) == 1)
@@ -52,8 +96,8 @@ namespace EndangeredEd.Xna
     {
       if (this.DeviceResetting != null)
         this.DeviceResetting((object) this, EventArgs.Empty);
-      this.parameters.set_BackBufferWidth(Math.Max(this.parameters.get_BackBufferWidth(), width));
-      this.parameters.set_BackBufferHeight(Math.Max(this.parameters.get_BackBufferHeight(), height));
+      this.parameters.BackBufferWidth = Math.Max(this.parameters.BackBufferWidth, width);
+      this.parameters.BackBufferHeight = Math.Max(this.parameters.BackBufferHeight, height);
       this.graphicsDevice.Reset(this.parameters);
       if (this.DeviceReset == null)
         return;

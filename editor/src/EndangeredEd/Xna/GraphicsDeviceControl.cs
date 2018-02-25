@@ -80,20 +80,20 @@ namespace EndangeredEd.Xna
       string str = this.HandleDeviceReset();
       if (!string.IsNullOrEmpty(str))
         return str;
-      Viewport viewport = (Viewport) null;
+      Viewport viewport = new Viewport(); // TODO: Validate.
       // ISSUE: explicit reference operation
-      ((Viewport) @viewport).set_X(0);
+      viewport.X = 0;
       // ISSUE: explicit reference operation
-      ((Viewport) @viewport).set_Y(0);
+      viewport.Y = 0;
       // ISSUE: explicit reference operation
-      ((Viewport) @viewport).set_Width(this.ClientSize.Width);
+      viewport.Width = this.ClientSize.Width;
       // ISSUE: explicit reference operation
-      ((Viewport) @viewport).set_Height(this.ClientSize.Height);
+      viewport.Height = this.ClientSize.Height;
       // ISSUE: explicit reference operation
-      ((Viewport) @viewport).set_MinDepth(0.0f);
+      viewport.MinDepth = 0.0f;
       // ISSUE: explicit reference operation
-      ((Viewport) @viewport).set_MaxDepth(1f);
-      this.GraphicsDevice.set_Viewport(viewport);
+      viewport.MinDepth = 1f;
+      this.GraphicsDevice.Viewport = viewport;
       return (string) null;
     }
 
@@ -101,18 +101,19 @@ namespace EndangeredEd.Xna
     {
       try
       {
-        Rectangle rectangle;
+        Microsoft.Xna.Framework.Rectangle rectangle = new Microsoft.Xna.Framework.Rectangle(); // TODO: Validate.
         // ISSUE: explicit reference operation
         // ISSUE: variable of a reference type
-        Rectangle& local = @rectangle;
-        int num1 = 0;
-        int num2 = 0;
+        Microsoft.Xna.Framework.Rectangle local = rectangle;
+        //int num1 = 0;
+        //int num2 = 0;
         Size clientSize = this.ClientSize;
         int width = clientSize.Width;
         clientSize = this.ClientSize;
         int height = clientSize.Height;
-        ((Rectangle) local).\u002Ector(num1, num2, width, height);
-        this.GraphicsDevice.Present(new Rectangle?(rectangle), new Rectangle?(), this.Handle);
+        //((Microsoft.Xna.Framework.Rectangle) local).\u002Ector(num1, num2, width, height); // TODO: Validate.[
+        this.GraphicsDevice.Present(); // TODO: Validate.
+        //this.GraphicsDevice.Present(new Microsoft.Xna.Framework.Rectangle?(rectangle), new Microsoft.Xna.Framework.Rectangle?(), this.Handle);
       }
       catch
       {
@@ -122,16 +123,16 @@ namespace EndangeredEd.Xna
     private string HandleDeviceReset()
     {
       bool flag;
-      switch (this.GraphicsDevice.get_GraphicsDeviceStatus() - 1)
+      switch (this.GraphicsDevice.GraphicsDeviceStatus - 1)
       {
-        case 0:
+        case GraphicsDeviceStatus.Normal:
           return "Graphics device lost";
-        case 1:
+        case GraphicsDeviceStatus.Lost:
           flag = true;
           break;
         default:
-          PresentationParameters presentationParameters = this.GraphicsDevice.get_PresentationParameters();
-          flag = this.ClientSize.Width > presentationParameters.get_BackBufferWidth() || this.ClientSize.Height > presentationParameters.get_BackBufferHeight();
+          PresentationParameters presentationParameters = this.GraphicsDevice.PresentationParameters;
+          flag = this.ClientSize.Width > presentationParameters.BackBufferWidth || this.ClientSize.Height > presentationParameters.BackBufferHeight;
           break;
       }
       if (flag)
@@ -155,8 +156,8 @@ namespace EndangeredEd.Xna
 
     protected virtual void PaintUsingSystemDrawing(System.Drawing.Graphics graphics, string text)
     {
-      graphics.Clear(Color.CornflowerBlue);
-      using (Brush brush = (Brush) new SolidBrush(Color.Black))
+      graphics.Clear(System.Drawing.Color.CornflowerBlue);
+      using (Brush brush = (Brush) new SolidBrush(System.Drawing.Color.Black))
       {
         using (StringFormat format = new StringFormat())
         {

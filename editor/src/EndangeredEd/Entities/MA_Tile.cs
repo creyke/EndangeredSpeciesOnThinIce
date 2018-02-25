@@ -84,7 +84,7 @@ namespace EndangeredEd.Entities
       maTile.asset = this.asset;
       maTile.spriteAsset = this.spriteAsset;
       maTile.spriteSize = this.spriteSize;
-      maTile.position = Vector2.get_Zero();
+      maTile.position = Vector2.Zero;
       maTile.offset = this.offset;
       maTile.isMoving = this.isMoving;
       maTile.moveVector = this.moveVector;
@@ -100,8 +100,8 @@ namespace EndangeredEd.Entities
       }
       else
       {
-        this.SpecialDraw(spriteBatch, animate, Vector2.get_Zero(), false);
-        if (this.isMoving && Vector2.op_Inequality(this.moveVector, Vector2.get_Zero()))
+        this.SpecialDraw(spriteBatch, animate, Vector2.Zero, false);
+        if (this.isMoving && this.moveVector == Vector2.Zero)
           this.SpecialDraw(spriteBatch, animate, this.moveVector, true);
       }
     }
@@ -109,16 +109,16 @@ namespace EndangeredEd.Entities
     protected void SpecialDraw(SpriteBatch spriteBatch, bool animate, Vector2 specialOffset, bool shadow)
     {
       this.animationFrame = 0U;
-      this.srcRectangle.Y = (__Null) 0;
-      Color color = this.selected ? new Color(byte.MaxValue, (byte) 0, (byte) 0, (byte) 128) : new Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
+      this.srcRectangle.Y = 0;
+      Microsoft.Xna.Framework.Color color = this.selected ? new Microsoft.Xna.Framework.Color(byte.MaxValue, (byte) 0, (byte) 0, (byte) 128) : new Microsoft.Xna.Framework.Color(byte.MaxValue, byte.MaxValue, byte.MaxValue, byte.MaxValue);
       if (shadow)
       {
         // ISSUE: explicit reference operation
         // ISSUE: explicit reference operation
-        ((Color) @color).set_A(Convert.ToByte((float) Convert.ToInt32(((Color) @color).get_A()) * 0.2f));
+        color.A = Convert.ToByte((float) Convert.ToInt32(((Microsoft.Xna.Framework.Color) color).A) * 0.2f);
       }
-      spriteBatch.Draw(MA_Tile.tileTextures[(int) this.tileGroup], Vector2.op_Addition(new Vector2((float) this.destRectangle.X, (float) this.destRectangle.Y), specialOffset), color);
-      spriteBatch.Draw(MA_Entity.ORIGIN_TEXTURE, Vector2.op_Subtraction(this.position, new Vector2(7f, 7f)), Color.get_White());
+      spriteBatch.Draw(MA_Tile.tileTextures[(int) this.tileGroup], Vector2.Add(new Vector2((float) this.destRectangle.X, (float) this.destRectangle.Y), specialOffset), color);
+      spriteBatch.Draw(MA_Entity.ORIGIN_TEXTURE, Vector2.Subtract(this.position, new Vector2(7f, 7f)), Microsoft.Xna.Framework.Color.White);
     }
   }
 }

@@ -451,11 +451,11 @@ namespace EndangeredEd
     {
       if (this.assetTexture != null)
       {
-        spriteBatch.Begin((SpriteBlendMode) 1);
-        for (int index1 = 0; (long) index1 < 1L + (long) this.Width / (long) this.assetTexture.get_Width(); ++index1)
+        spriteBatch.Begin(SpriteSortMode.Immediate); // TODO: Validate. (SpriteBlendMode) 1);
+        for (int index1 = 0; (long) index1 < 1L + (long) this.Width / (long) this.assetTexture.Width; ++index1)
         {
-          for (int index2 = 0; (long) index2 < 1L + (long) this.Height / (long) this.assetTexture.get_Height(); ++index2)
-            spriteBatch.Draw(this.assetTexture, new Vector2((float) (index1 * this.assetTexture.get_Width()), (float) (index2 * this.assetTexture.get_Height())), Color.get_White());
+          for (int index2 = 0; (long) index2 < 1L + (long) this.Height / (long) this.assetTexture.Height; ++index2)
+            spriteBatch.Draw(this.assetTexture, new Vector2((float) (index1 * this.assetTexture.Width), (float) (index2 * this.assetTexture.Height)), Microsoft.Xna.Framework.Color.White);
         }
         spriteBatch.End();
       }
@@ -466,12 +466,12 @@ namespace EndangeredEd
         {
           for (int index2 = 0; index2 < (this.entities[index1] as EndangeredEd.Entities.MA_Node).Neighbours.Count; ++index2)
           {
-            primitiveBatch.AddVertex(this.entities[index1].Position, Color.get_White());
+            primitiveBatch.AddVertex(this.entities[index1].Position, Microsoft.Xna.Framework.Color.White);
             for (int index3 = 0; index3 < this.entities.Count; ++index3)
             {
               if (this.entities[index3].GetType() == typeof (EndangeredEd.Entities.MA_Node) && (this.entities[index3] as EndangeredEd.Entities.MA_Node).NodeID == (this.entities[index1] as EndangeredEd.Entities.MA_Node).Neighbours[index2])
               {
-                primitiveBatch.AddVertex(this.entities[index3].Position, Color.get_White());
+                primitiveBatch.AddVertex(this.entities[index3].Position, Microsoft.Xna.Framework.Color.White);
                 break;
               }
             }

@@ -7,8 +7,7 @@
     <ProjectGuid>{B8512B1A-DD3B-425E-86FB-D8DBF363447D}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AssemblyName>EndangeredEd</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
-    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <RootNamespace>EndangeredEd</RootNamespace>
     <FileUpgradeFlags>
@@ -16,6 +15,22 @@
     <UpgradeBackupLocation>
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -26,6 +41,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,8 +51,12 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="MonoGame.Framework, Version=3.6.0.1625, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\MonoGame.Framework.WindowsDX.3.6.0.1625\lib\net40\MonoGame.Framework.dll</HintPath>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="Microsoft.Build.Framework" />
     <Reference Include="System" />
@@ -65,10 +85,14 @@
     <Compile Include="Entities\MA_Pickup.cs" />
     <Compile Include="Entities\MA_Node.cs" />
     <Compile Include="Entities\MA_Tile.cs" />
-    <Compile Include="Xna\GraphicsDeviceControl.cs" />
+    <Compile Include="Xna\GraphicsDeviceControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Xna\ContentBuilder.cs" />
     <Compile Include="Xna\ServiceContainer.cs" />
-    <Compile Include="Xna\ModelViewerControl.cs" />
+    <Compile Include="Xna\ModelViewerControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Xna\GraphicsDeviceService.cs" />
     <Compile Include="Xna\ErrorLogger.cs" />
     <Compile Include="Enums\EntityClass.cs" />
@@ -77,11 +101,21 @@
     <Compile Include="Enums\TGL.cs" />
     <Compile Include="Properties\Resources.cs" />
     <Compile Include="Properties\Settings.cs" />
-    <Compile Include="Forms\FormOptions.cs" />
-    <Compile Include="Forms\FormBuildProgress.cs" />
-    <Compile Include="Forms\FormEditor.cs" />
-    <Compile Include="Forms\FormNewEntity.cs" />
-    <Compile Include="Interface\SuperPictureBox.cs" />
+    <Compile Include="Forms\FormOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormBuildProgress.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormNewEntity.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Interface\SuperPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +124,17 @@
     <EmbeddedResource Include="Forms\FormNewEntity.resx" />
     <EmbeddedResource Include="Forms\FormOptions.resx" />
     <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

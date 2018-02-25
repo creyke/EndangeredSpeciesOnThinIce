@@ -20,7 +20,7 @@ namespace EndangeredEd.Entities
       maCheckpoint.asset = this.asset;
       maCheckpoint.spriteAsset = this.spriteAsset;
       maCheckpoint.spriteSize = this.spriteSize;
-      maCheckpoint.position = Vector2.get_Zero();
+      maCheckpoint.position = Vector2.Zero;
       maCheckpoint.offset = this.offset;
       return (MA_Entity) maCheckpoint;
     }

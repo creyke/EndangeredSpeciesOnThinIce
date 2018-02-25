@@ -50,39 +50,25 @@ namespace EndangeredEd
     public static Texture2D XNATextureFromBitmap(Bitmap b, GraphicsDevice device)
     {
       Texture2D texture2D = new Texture2D(device, b.Width, b.Height);
-      Color[] colorArray = new Color[b.Width * b.Height];
+      System.Drawing.Color[] colorArray = new System.Drawing.Color[b.Width * b.Height];
       int index = 0;
       for (int y = 0; y < b.Height; ++y)
       {
         for (int x = 0; x < b.Width; ++x)
         {
-          Color pixel = b.GetPixel(x, y);
+          System.Drawing.Color pixel = b.GetPixel(x, y);
           if ((int) pixel.R == (int) byte.MaxValue && (int) pixel.G == 0 && (int) pixel.B == (int) byte.MaxValue && (int) pixel.A == (int) byte.MaxValue)
           {
-            // ISSUE: explicit reference operation
-            ((Color) @colorArray[index]).set_A((byte) 0);
-            // ISSUE: explicit reference operation
-            ((Color) @colorArray[index]).set_R(byte.MaxValue);
-            // ISSUE: explicit reference operation
-            ((Color) @colorArray[index]).set_G((byte) 0);
-            // ISSUE: explicit reference operation
-            ((Color) @colorArray[index]).set_B(byte.MaxValue);
+            colorArray[index] = System.Drawing.Color.FromArgb((byte)0, byte.MaxValue, (byte) 0, byte.MaxValue);
           }
           else
           {
-            // ISSUE: explicit reference operation
-            ((Color) @colorArray[index]).set_A(byte.MaxValue);
-            // ISSUE: explicit reference operation
-            ((Color) @colorArray[index]).set_R(pixel.R);
-            // ISSUE: explicit reference operation
-            ((Color) @colorArray[index]).set_G(pixel.G);
-            // ISSUE: explicit reference operation
-            ((Color) @colorArray[index]).set_B(pixel.B);
+            colorArray[index] = System.Drawing.Color.FromArgb(byte.MaxValue, pixel.R, pixel.G, pixel.B);
           }
           ++index;
         }
       }
-      texture2D.SetData<Color>((M0[]) colorArray);
+      texture2D.SetData<System.Drawing.Color>(colorArray);
       return texture2D;
     }
 
