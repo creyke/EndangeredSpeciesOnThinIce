@@ -578,23 +578,17 @@ namespace EndangeredEd.Forms
 
     private void SetSelected(object selectedObj)
     {
-      try
+      if (this.propertyGrid1.SelectedObject is MA_Entity)
       {
         (this.propertyGrid1.SelectedObject as MA_Entity).Selected = false;
-      }
-      catch (Exception ex)
-      {
       }
       this.propertyGrid1.SelectedObject = (object) null;
       if (selectedObj != null)
       {
         this.propertyGrid1.SelectedObject = selectedObj;
-        try
+        if (this.propertyGrid1.SelectedObject is MA_Entity)
         {
           (this.propertyGrid1.SelectedObject as MA_Entity).Selected = true;
-        }
-        catch (Exception ex)
-        {
         }
       }
       string str = "Selected: ";
