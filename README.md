@@ -21,6 +21,11 @@ Final year group project for the University Campus Suffolk (now University of Su
 1. Download an emulator such as DeSmuME.
 2. Download and run one of the .nds binary file from the [builds](https://github.com/creyke/EndangeredSpeciesOnThinIce/tree/master/builds) folder.
 
+# Mapping
+1. Run the editor from [source](https://github.com/creyke/EndangeredSpeciesOnThinIce/tree/master/editor/src) or (easier) from [binary](https://github.com/creyke/EndangeredSpeciesOnThinIce/tree/master/editor/bin) - the "Windows10" version has a setup.exe installer, after which EndangeredEd is in the start menu.
+2. Download one of the [level](https://github.com/creyke/EndangeredSpeciesOnThinIce/tree/master/levels) files from this repository.
+3. Open the map with "File / Open Level".
+
 # Technology
 * The game was written in C++ on top of PALib and libnds.
 * All physics, camera and gameplay code was written from scratch.
